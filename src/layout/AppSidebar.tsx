@@ -21,22 +21,22 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     icon: <HomeFilledIcon />,
-    name: "Əsas",
+    name: "Home",
     path: "/"
   },
   {
     icon: <UserCircleIcon />,
-    name: "Şəxsi məlumatlar",
+    name: "Personal Details",
     path: "/profile",
   },
   {
     icon: <SchoolIcon />,
-    name: "İxtisaslar",
+    name: "Major",
     path: "/specialties",
   },
   {
     icon: <AddIcon />,
-    name: "Yeni ixtisas",
+    name: "New Major",
     path: "/new-specialty",
   }
 ];
