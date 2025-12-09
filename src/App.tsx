@@ -1,10 +1,6 @@
 import Blank from "./pages/Blank";
-import { jwtDecode } from "jwt-decode";
 import Home from "./pages/Dashboard/Home";
-import { useSelector } from "react-redux";
-import { RootState } from "./redux/store";
 import AppLayout from "./layout/AppLayout";
-import type { JwtPayload } from "jwt-decode";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
 import UserProfiles from "./pages/UserProfiles";
