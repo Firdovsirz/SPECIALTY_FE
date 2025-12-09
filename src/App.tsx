@@ -20,43 +20,27 @@ import SubjectsPage from "./pages/SubjectsPage/SubjectsPage";
 import NewTopicPage from "./pages/NewTopicPage/NewTopicPage";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import NewSubjectPage from "./pages/NewSubjectPage/NewSubjectPage";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import NewSpecCharPage from "./pages/NewSpecCharPage/NewSpecCharPage";
 import SpecialtiesPage from "./pages/SpecialtiesPage/SpecialtiesPage";
 import LiteraturesPage from "./pages/LiteraturesPage/LiteraturesPage";
 import SubjectDeails from "./components/subjectDetails/SubjectDetails";
 import NewSpecialtyPage from "./pages/NewSpecialtyPage/NewSpecialtyPage";
 import TopicDetailsPage from "./pages/TopicDetailsPage/TopicDetailsPage";
+import NewLiteraturePage from "./pages/NewLiteraturePage/NewLiteraturePage";
 import NewCompetencyPage from "./pages/NewCompetencyPage/NewCompetencyPage";
 import SpecialtyDetailsPage from "./pages/SpecialtyDetails/SpecialtyDetails";
-import NewLiteraturePage from "./pages/NewLiteraturePage/NewLiteraturePage";
-import SubjectMatchingTablePage from "./pages/SubjectMatchingTablePage/SubjectMatchingTablePage";
 import SubjectsSillabusPage from "./pages/SubjectSillabusPage/SubjectSillabusPage";
-import NewSpecCharPage from "./pages/NewSpecCharPage/NewSpecCharPage";
-
-function isTokenValid(token: string | null): boolean {
-  if (!token) return false;
-  try {
-    const decoded = jwtDecode<JwtPayload>(token);
-    if (decoded.exp && decoded.exp * 1000 < Date.now()) {
-      return false;
-    }
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
+import SubjectMatchingTablePage from "./pages/SubjectMatchingTablePage/SubjectMatchingTablePage";
 
 export default function App() {
-  const token = useSelector((state: RootState) => state.auth.token);
-  const isValid = isTokenValid(token);
-
   return (
     <>
       <Router>
         <ScrollToTop />
         <Routes>
           {/* Dashboard Layout */}
-          <Route element={!isValid ? (<Navigate to={"/signin"} replace/>) : (<AppLayout />)}>
+          <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
 
             {/* Others Page */}

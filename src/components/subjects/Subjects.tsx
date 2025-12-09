@@ -53,7 +53,7 @@ export default function Subjects() {
         }}
        onClick={() => navigate("/specialty-details/subjects/subject-matching-table", { state: { specialtyCode } })}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">Fənnin uyğunluq cədvəli</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Subject correspondence table</span>
         <ArrowOutwardIcon
           className="text-sm text-gray-500 dark:text-gray-400"
         />

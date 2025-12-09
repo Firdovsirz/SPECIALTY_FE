@@ -14,9 +14,9 @@ export default function SubjectMatchingTablePage() {
                 title="AzTU İxtisaslar"
                 description="AzTU İxtisaslar"
             />
-            <PageBreadcrumb pageTitle="Fənn məlumatları " />
+            <PageBreadcrumb pageTitle="Subject correspondence table " />
             <div className="space-y-6">
-                <ComponentCard title={`Fənn məlumatları ( ${specialtyName}-${specialtyCode} )`} isNew={true} state={{ specialtyCode, specialtyName }} path="/specialty-details/subjects/new">
+                <ComponentCard title={`Subject correspondence table ( ${specialtyName}-${specialtyCode} )`} isNew={true} state={{ specialtyCode, specialtyName }} path="/specialty-details/subjects/new">
                     <SubjectMatchingTable />
                 </ComponentCard>
             </div>

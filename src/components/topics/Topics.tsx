@@ -58,9 +58,9 @@ export default function Topics() {
                             hover:bg-white hover:text-blue-500
                             cursor-pointer"
                         >
-                            <Link to={"/specialty-details/subjects/topics/details"} state={{ topicName: topic.topic_name, topicUrl: topic.topic_url, topicType: topic.topic_type, topicDesc: topic.topic_desc, topicResult: topic.topic_result, topicCode: topic.topic_code }} className="flex justify-between w-full">
+                            <Link to={`${topic.topic_url}`} state={{ topicName: topic.topic_name, topicUrl: topic.topic_url, topicType: topic.topic_type, topicDesc: topic.topic_desc, topicResult: topic.topic_result, topicCode: topic.topic_code }} className="flex justify-between w-full">
                                 <div>
-                                    {topic.topic_name} ({topic.topic_type === 1 ? "Mühazirə" : topic.topic_type === 2 ? "Məşğələ" : topic.topic_type === 3 ? "Laboratoriya" : topic.topic_type === 4 ? "Sərbəsi iş" : "Mövcud deyil"})
+                                    {topic.topic_name} ({topic.topic_type === 1 ? "Lecture" : topic.topic_type === 2 ? "Məşğələ" : topic.topic_type === 3 ? "Laboratoriya" : topic.topic_type === 4 ? "Sərbəsi iş" : "Mövcud deyil"})
                                 </div>
                                 <div>
                                     <ArrowOutwardIcon sx={{ fontSize: 25 }} />

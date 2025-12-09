@@ -14,9 +14,9 @@ export default function TopicsPage() {
                 title="AzTU İxtisaslar"
                 description="AzTU İxtisaslar"
             />
-            <PageBreadcrumb pageTitle="Fənnin mövzuları" />
+            <PageBreadcrumb pageTitle="Subject topics" />
             <div className="space-y-6">
-                <ComponentCard title={`Fənnin mövzuları ( ${subjectName}-${subjectCode} )`} buttonTitle="Yeni mövzu" isNew={true} topicState={{ subjectCode, subjectName }} path="/specialty-details/subjects/topics/new">
+                <ComponentCard title={`Subject topics ( ${subjectName}-${subjectCode} )`} buttonTitle="Yeni mövzu" isNew={true} topicState={{ subjectCode, subjectName }} path="/specialty-details/subjects/topics/new">
                     <Topics />
                 </ComponentCard>
             </div>

@@ -14,9 +14,9 @@ export default function SubjectsPage() {
                 title="AzTU İxtisaslar"
                 description="AzTU İxtisaslar"
             />
-            <PageBreadcrumb pageTitle="İxtisasın fənn məlumatları " />
+            <PageBreadcrumb pageTitle="Subject information of the specialty " />
             <div className="space-y-6">
-                <ComponentCard title={`İxtisasın fənn məlumatları ( ${specialtyName}-${specialtyCode} )`} isNew={true} state={{ specialtyCode, specialtyName }} path="/specialty-details/subjects/new">
+                <ComponentCard title={`Subject information of the specialty ( ${specialtyName}-${specialtyCode} )`} isNew={true} state={{ specialtyCode, specialtyName }} path="/specialty-details/subjects/new">
                     <Subjects />
                 </ComponentCard>
             </div>

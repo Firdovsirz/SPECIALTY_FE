@@ -160,7 +160,7 @@ export default function SpecialtyDetails() {
         cursor-pointer"
         >
           <Link to={"/specialty-details/subjects"} state={{ specialtyCode: specialtyCode, specialtyName: specialtyName }} className="flex justify-between items-center w-full">
-            <p>Təhsil proqramının məlumatları</p>
+            <p>Educational program information</p>
             <div>
               <ArrowOutwardIcon sx={{ fontSize: 25 }} />
             </div>
@@ -198,7 +198,7 @@ export default function SpecialtyDetails() {
         }}
         onClick={() => setOpenSection(openSection === "characteristics" ? null : "characteristics")}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">İxtisas xarakteristikası (Proqramın təsviri və Proqramın tələbləri)</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Qualification Characteristics (Program Description and Program Requirements)</span>
         <AddIcon
           className="text-sm text-gray-500 dark:text-gray-400"
           style={{ transform: openSection === "characteristics" ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}
@@ -210,7 +210,7 @@ export default function SpecialtyDetails() {
           {specialtyChar?.degree_requirements && specialtyChar.degree_requirements.length !== 0 ? (
             <>
               <Label>
-                Proqramın təsviri
+                Program Description
               </Label>
               <TextArea
                 value={specialtyChar?.program_desc || ""}
@@ -218,7 +218,7 @@ export default function SpecialtyDetails() {
                 placeholder="Proqramın təsviri"
               />
               <Label>
-                Proqramın tələbləri
+                Program Requirements
               </Label>
               <TextArea
                 value={Array.isArray(specialtyChar?.degree_requirements) ? specialtyChar.degree_requirements.join("\n") : specialtyChar?.degree_requirements || ""}
@@ -229,7 +229,7 @@ export default function SpecialtyDetails() {
           ) : (
             <div className="flex justify-center items-center">
               <p className="bg-yellow-100 text-yellow-800 p-2 rounded-[20px] w-[200px] text-center mr-[10px]">
-                Mövcud deyil
+                Not found
               </p>
               <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center" onClick={() => {
                 navigate("/specialty-details/new-specialty-characteristics", { state: { specialtyCode, specialtyName } })
@@ -254,7 +254,7 @@ export default function SpecialtyDetails() {
         }}
         onClick={() => setOpenSection(openSection === "plo" ? null : "plo")}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">Proqram Təlim Məqsədləri</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Program Training Objectives</span>
         <AddIcon
           className="text-sm text-gray-500 dark:text-gray-400"
           style={{ transform: openSection === "plo" ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}
@@ -266,14 +266,14 @@ export default function SpecialtyDetails() {
           {plo.length !== 0 ? (
             <>
               <Label>
-                Proqram Təlim Məqsədləri
+                Program Training Objectives
               </Label>
               {plo.map((item, index) => {
                 return (
                   <TextArea key={index}
                     value={item?.plo_content || ""}
                     readOnly
-                    placeholder="Proqram Təlim Məqsədləri"
+                    placeholder="Program Training Objectives"
                   />
                 )
               })}
@@ -281,7 +281,7 @@ export default function SpecialtyDetails() {
           ) : (
             <div className="flex justify-center items-center">
               <p className="bg-yellow-100 text-yellow-800 p-2 rounded-[20px] w-[200px] text-center mr-[10px]">
-                Mövcud deyil
+                Not found
               </p>
               <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center" onClick={() => {
                 navigate("/specialty-details/new-plo", { state: { specialtyCode, specialtyName } })
@@ -292,7 +292,7 @@ export default function SpecialtyDetails() {
           )}
           <div className="flex justify-end items-center">
             <Label>
-              Yeni Proqram Təlim Məqsədləri
+              New Program Training Objectives
             </Label>
             <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center ml-[20px]" onClick={() => {
               navigate("/specialty-details/new-plo", { state: { specialtyCode, specialtyName } })
@@ -316,7 +316,7 @@ export default function SpecialtyDetails() {
         }}
         onClick={() => setOpenSection(openSection === "slo" ? null : "slo")}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">Tələbələrin Təlim Nəticələri</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Student Learning Outcomes</span>
         <AddIcon
           className="text-sm text-gray-500 dark:text-gray-400"
           style={{ transform: openSection === "slo" ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}
@@ -329,7 +329,7 @@ export default function SpecialtyDetails() {
             {slo.length !== 0 ? (
               <>
                 <Label>
-                  Tələbələrin Təlim Nəticələri
+                  Student Learning Outcomes
                 </Label>
                 {slo.map((item, index) => {
                   return (
@@ -337,7 +337,7 @@ export default function SpecialtyDetails() {
                       key={index}
                       value={item?.slo_content || ""}
                       readOnly
-                      placeholder="Tələbələrin Təlim Nəticələri"
+                      placeholder="Student Learning Outcomes"
                     />
                   )
                 })}
@@ -345,7 +345,7 @@ export default function SpecialtyDetails() {
             ) : (
               <div className="flex justify-center items-center">
                 <p className="bg-yellow-100 text-yellow-800 p-2 rounded-[20px] w-[200px] text-center mr-[10px]">
-                  Mövcud deyil
+                  Not found
                 </p>
                 <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center" onClick={() => {
                   navigate("/specialty-details/new-slo", { state: { specialtyCode, specialtyName } })
@@ -357,7 +357,7 @@ export default function SpecialtyDetails() {
           </div>
           <div className="flex justify-end items-center">
             <Label>
-              Yeni Tələbələrin Təlim Nəticələri
+              Yeni Student Learning Outcomes
             </Label>
             <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center ml-[20px]" onClick={() => {
               navigate("/specialty-details/new-slo", { state: { specialtyCode, specialtyName } })
@@ -381,7 +381,7 @@ export default function SpecialtyDetails() {
         }}
         onClick={() => setOpenSection(openSection === "gco" ? null : "gco")}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">Məzunların Karyera İmkanları</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Career Opportunities for Graduates</span>
         <AddIcon
           className="text-sm text-gray-500 dark:text-gray-400"
           style={{ transform: openSection === "gco" ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}
@@ -404,7 +404,7 @@ export default function SpecialtyDetails() {
                     <TextArea
                       value={gco?.career_content || ""}
                       readOnly
-                      placeholder="Tələbələrin Təlim Nəticələri"
+                      placeholder="Student Learning Outcomes"
                       className="w-full border border-gray-300 rounded-md p-2 bg-gray-50 resize-none"
                     />
                   </div>
@@ -412,7 +412,7 @@ export default function SpecialtyDetails() {
               ))}
               <div className="flex justify-end items-center">
                 <Label>
-                  Yeni karyera imkanı
+                  New career opporunity
                 </Label>
                 <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center ml-[20px]" onClick={() => {
                   navigate("/specialty-details/new-gco", { state: { specialtyCode, specialtyName } })
@@ -424,7 +424,7 @@ export default function SpecialtyDetails() {
           ) : (
             <div className="flex justify-center items-center">
               <p className="bg-yellow-100 text-yellow-800 p-2 rounded-[20px] w-[200px] text-center mr-[10px]">
-                Mövcud deyil
+                Not found
               </p>
               <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center" onClick={() => {
                 navigate("/specialty-details/new-gco", { state: { specialtyCode, specialtyName } })
@@ -449,7 +449,7 @@ export default function SpecialtyDetails() {
         }}
         onClick={() => setOpenSection(openSection === "competency" ? null : "competency")}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">İxitsasın Səriştələri</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Competencies</span>
         <AddIcon
           className="text-sm text-gray-500 dark:text-gray-400"
           style={{ transform: openSection === "competency" ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}
@@ -461,7 +461,7 @@ export default function SpecialtyDetails() {
           {competency.length !== 0 ? (
             <>
               <Label>
-                İxitsasın Səriştələri
+                Competencies
               </Label>
               {competency.map((item, index) => {
                 return (
@@ -477,7 +477,7 @@ export default function SpecialtyDetails() {
           ) : (
             <div className="flex justify-center items-center">
               <p className="bg-yellow-100 text-yellow-800 p-2 rounded-[20px] w-[200px] text-center mr-[10px]">
-                Mövcud deyil
+                Not found
               </p>
               <button className="bg-blue-500 text-white p-2 rounded-[50px] hover:bg-blue-600 flex items-center justify-center" onClick={() => {
                 navigate("/specialty-details/new-competency", { state: { specialtyCode, specialtyName } })
