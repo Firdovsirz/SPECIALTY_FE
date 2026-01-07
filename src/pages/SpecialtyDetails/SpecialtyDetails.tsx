@@ -10,9 +10,9 @@ export default function SpecialtyDetailsPage() {
                 title="AzTU İxtisaslar"
                 description="AzTU İxtisaslar"
             />
-            <PageBreadcrumb pageTitle="İxtisas" />
+            <PageBreadcrumb pageTitle="Major" />
             <div className="space-y-6">
-                <ComponentCard title="İxtisas">
+                <ComponentCard title="Major">
                     <SpecialtyDetails />
                 </ComponentCard>
             </div>

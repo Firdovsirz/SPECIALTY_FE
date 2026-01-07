@@ -12,7 +12,7 @@ import { Subject, getCurriculaBySpecialtyCode } from "../../services/curricula/c
 export default function Subjects() {
     const location = useLocation();
     const navigate = useNavigate();
-    const [end, setEnd] = useState<number>(6);
+    const [end, setEnd] = useState<number>(20);
     const [loading, setLoading] = useState(false);
     const [start, setStart] = useState<number>(0);
     const [subjects, setSubjects] = useState<Subject[]>([]);

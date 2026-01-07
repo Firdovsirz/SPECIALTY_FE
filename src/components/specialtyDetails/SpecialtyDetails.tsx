@@ -151,28 +151,12 @@ export default function SpecialtyDetails() {
 
   return (
     <>
-      <div className="w-full flex justify-between items-center">
-        <div
-          className="w-full mr-2  p-4 flex justify-between items-center 
-        bg-blue-500 text-white border-2 border-blue-500 rounded-[15px]
-        transition-colors duration-300
-        hover:bg-white hover:text-blue-500
-        cursor-pointer"
-        >
-          <Link to={"/specialty-details/subjects"} state={{ specialtyCode: specialtyCode, specialtyName: specialtyName }} className="flex justify-between items-center w-full">
-            <p>Educational program information</p>
-            <div>
-              <ArrowOutwardIcon sx={{ fontSize: 25 }} />
-            </div>
-          </Link>
-        </div>
-      </div>
       <div className="flex justify-between items-center w-full">
         <div style={{
           width: "calc((100% / 2) - 20px)"
         }}>
           <Label>
-            İxtisas adı
+            Major name
           </Label>
           <Input value={specialtyName} readOnly />
         </div>
@@ -180,7 +164,7 @@ export default function SpecialtyDetails() {
           width: "calc((100% / 2) - 20px)"
         }}>
           <Label>
-            İxtisas kodu
+            Major code
           </Label>
           <Input value={specialtyCode} readOnly />
         </div>
@@ -254,7 +238,7 @@ export default function SpecialtyDetails() {
         }}
         onClick={() => setOpenSection(openSection === "plo" ? null : "plo")}
       >
-        <span className="text-sm text-gray-500 dark:text-gray-400">Program Training Objectives</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">Program Learning Objectives</span>
         <AddIcon
           className="text-sm text-gray-500 dark:text-gray-400"
           style={{ transform: openSection === "plo" ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}
@@ -498,6 +482,22 @@ export default function SpecialtyDetails() {
           </div>
         </div>
       )}
+      <div className="w-full flex justify-between items-center">
+        <div
+          className="w-full mr-2  p-4 flex justify-between items-center 
+        bg-blue-500 text-white border-2 border-blue-500 rounded-[15px]
+        transition-colors duration-300
+        hover:bg-white hover:text-blue-500
+        cursor-pointer"
+        >
+          <Link to={"/specialty-details/subjects"} state={{ specialtyCode: specialtyCode, specialtyName: specialtyName }} className="flex justify-between items-center w-full">
+            <p>Curriculum</p>
+            <div>
+              <ArrowOutwardIcon sx={{ fontSize: 25 }} />
+            </div>
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
